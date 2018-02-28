@@ -1,0 +1,24 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="urn://bancompartir.com/services/accounts/accountgmfmng/v1.0" xmlns:v11="urn://bancompartir.com/accounts/event/v1" xmlns:com="urn://bancompartir.com/xsd/common">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getGMFRequest>
+         <v11:GMFInqRq>
+            <com:RqUID>${=java.util.UUID.randomUUID();}</com:RqUID>
+            <com:NetworkTrnInfo>
+               <com:NetworkOwner>123</com:NetworkOwner>
+               <com:TerminalId>OnBase123</com:TerminalId>
+               <com:NetworkRefId>ONBASE</com:NetworkRefId>
+               <com:IPAdress>192.168.1.1</com:IPAdress>
+            </com:NetworkTrnInfo>
+            <com:CustId>
+               <com:CustPermId>onbase1</com:CustPermId>
+               <com:CustLoginId>user1ibs</com:CustLoginId>
+            </com:CustId>
+            <com:MaxRec>1</com:MaxRec>
+            <com:ClientDt>2018-10-30T09:00:00</com:ClientDt>
+            <com:IdentType>123</com:IdentType>
+            <com:IdentNum>234</com:IdentNum>
+         </v11:GMFInqRq>
+      </v1:getGMFRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
