@@ -24,7 +24,7 @@ public class FW_Web {
 	 * Se utiliza para buscar el índice de una ventana en el id_handless y poder retornar el handle correspondiente
 	 * @param set		Set de objetos
 	 * @param value		Objeto que se busca en el Set
-	 * @return			Índice del objeto en el Set
+	 * @return			Indice del objeto en el Set
 	 */
 	public static int getIndex(Set<? extends Object> set, Object value) {
 	   int result = 0;
@@ -61,7 +61,7 @@ public class FW_Web {
 	
 	/**
 	 * Agrega un identificador a la primera ventana nueva que se encuentre.
-	 * @param Handles							Set de las ventanas actuales
+	 * @param pHandles							Set de las ventanas actuales
 	 * @param strIdentificadorNuevaVentana		Identificador de nueva ventana
 	 */
 	public void registrarNuevaVentana(Set<String> pHandles, String strIdentificadorNuevaVentana) {
@@ -76,7 +76,7 @@ public class FW_Web {
 	
 	/**
 	 * Agrega un identificador a la primera ventana nueva que se encuentre.
-	 * @param driver							
+	 * @param driver WebDriver
 	 * @param strIdentificadorNuevaVentana		Identificador de nueva ventana
 	 */
 	public void registrarNuevaVentana(WebDriver driver, String strIdentificadorNuevaVentana) {

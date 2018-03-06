@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2017, Choucair Cárdenas Testing S.A.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ */
+
 package com.bancompartir.aurora.Banco;
 
 import java.io.BufferedReader;
@@ -12,6 +17,23 @@ import java.util.Map;
 
 import com.choucair.framework.FW_Utilidades;
 
+/**
+ * Contiene las funciones auxiliares específicas del Banco.
+ * <p>
+ * Los métodos implementados en esta clase son de caracter <b>CONFIDENCIAL</b> y
+ * de <b>USO EXCLUSIVO</b> del proyecto <b>BANCOMPARTIR - AURORA</b> y son
+ * aplicables únicamente para el caso particular de la automatización ante el
+ * cliente.
+ * <p>
+ * No debe ser replicado ante otros clientes.
+ * 
+ * @author cmurciag
+ * @version 1.1
+ * @since 26/12/2017
+ * 
+ * @see Bancompartir_DB
+ * @see Bancompartir_variables
+ */
 public class Bancompartir_Funciones {
 
 	// Variables
@@ -206,7 +228,7 @@ public class Bancompartir_Funciones {
 
 		String strRutaArchivo = map.get("JENKINS_HOME") + "\\jobs\\" + map.get("JOB_NAME") + "\\builds\\"
 				+ map.get("BUILD_ID") + "\\thucydidesReports\\summary.txt";
-		
+
 		Map<String, String> keys = new LinkedHashMap<>();
 		keys.put("DATE_REPORT_SUMMARY", "Serenity report generated");
 		keys.put("SCENARIOS_SUMMARY", "test scenarios");
@@ -220,23 +242,21 @@ public class Bancompartir_Funciones {
 
 		return util.obtenerCamposDeArchivoTXT(strRutaArchivo, keys);
 	}
-	
-
 
 	public String[] obtenerArregloDeLineasResultsCsv(Map<String, String> map) {
-		
+
 		List<String> lines = new ArrayList<String>();
 		String[] arrLines = null;
-		
+
 		String strRutaArchivo = map.get("JENKINS_HOME") + "\\jobs\\" + map.get("JOB_NAME") + "\\builds\\"
 				+ map.get("BUILD_ID") + "\\thucydidesReports\\results.csv";
-		
+
 		BufferedReader br = null;
 		String line;
 
 		try {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(strRutaArchivo), "ISO-8859-1"));
-			
+
 			// La primer línea es el encabezado
 			br.readLine();
 
@@ -244,10 +264,10 @@ public class Bancompartir_Funciones {
 			while ((line = br.readLine()) != null) {
 				lines.add(line.replace("\"", ""));
 			}
-			
+
 			arrLines = new String[lines.size()];
 			arrLines = lines.toArray(arrLines);
-			
+
 			return arrLines;
 
 		} catch (Exception e) {
@@ -261,7 +281,7 @@ public class Bancompartir_Funciones {
 				}
 			}
 		}
-		
+
 		return arrLines;
 	}
 

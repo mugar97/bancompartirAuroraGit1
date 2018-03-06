@@ -1,0 +1,8 @@
+com.bancompartir.aurora
+com.bancompartir.aurora.Banco
+com.bancompartir.aurora.Definitions
+com.bancompartir.aurora.PageObjects
+com.bancompartir.aurora.Runners
+com.bancompartir.aurora.Steps
+com.bancompartir.aurora.Suites
+com.choucair.framework
